@@ -1,17 +1,42 @@
 {
-  "channel": [
-    {
-      "name": "ACE.CONN",
+  "channel": [{
+      "name": "DEV.APP.SVRCONN",
       "clientConnection": {
-        "connection": [
-          {
-            "host": "mqlimit1000-ibm-mq-qm-mq.itzroks-663002388p-fxba7u-6ccd7f378ae819553d37d5f2ee142bd6-0000.au-syd.containers.appdomain.cloud",
-            "port": 443
-          }
-        ],
-        "queueManager": "QM1"
+        "connection": [{
+          "host": "127.0.0.1",
+          "port": 1414
+         },{
+          "host": "127.0.0.1",
+          "port": 1416
+          }],
+        "queueManager": "QMGroupA"
       },
       "type": "clientConnection"
-    }
-  ]
+    },{
+        "name": "DEV.APP.SVRCONN",
+        "clientConnection": {
+          "connection": [{
+            "host": "127.0.0.1",
+            "port": 1416
+          },{
+            "host": "127.0.0.1",
+            "port": 1414
+            }],
+          "queueManager": "QMGroupB"
+        },
+        "type": "clientConnection"
+      },{
+      "name": "DEV.APP.SVRCONN",
+      "clientConnection": {
+        "connection": [{
+          "host": "127.0.0.1",
+          "port": 1415
+        }],
+        "queueManager": "QM1TLS"
+      },
+      "transmissionSecurity": {
+        "cipherSpecification" : "TLS_RSA_WITH_AES_128_CBC_SHA256"
+      },
+      "type": "clientConnection"
+    }]
 }
