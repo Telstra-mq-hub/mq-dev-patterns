@@ -17,7 +17,7 @@ pipeline {
         stage('Push Image') {
             steps {
                 echo 'Push Image to Repository'
-                docker push ${IMAGE_REPO}/mq/testing
+                sh "docker push $IMAGE_REPO/mq/testing"
             }
         }
     }
