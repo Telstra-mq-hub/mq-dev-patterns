@@ -10,7 +10,7 @@ pipeline {
         stage('Build Image') {
             steps {
                 echo 'Build Image'
-                sh "docker login -u $USERNAME -p $PASSWORD $IMAGE_REPO"
+                docker login -u $USERNAME -p $PASSWORD $IMAGE_REPO
                 docker build --tag $IMAGE_REPO/mq/testing .
             }
         }
