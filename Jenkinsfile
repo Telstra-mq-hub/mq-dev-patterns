@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent {dockerfile true }
     environment {
         IBM_ENTITLEMENT_KEY = credentials('ibm_entitlement_key')
         USERNAME            = "michelle.jiang@ibm.com"
