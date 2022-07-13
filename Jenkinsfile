@@ -9,7 +9,7 @@ pipeline {
 
         stage('create build') {
             steps {
-                sh 'oc start-build dockerfile-buildconfig'
+                sh 'oc start-build dockerfile-buildconfig -n mq'
             }
         }
     }
