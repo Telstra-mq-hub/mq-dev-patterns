@@ -16,6 +16,6 @@ spec:
       dockerfilePath: Dockerfile
   output:
     to:
-      kind: "ImageStreamTag"
+      kind: "DockerImage"
       name: "default-route-openshift-image-registry.itzroks-663002388p-fxba7u-6ccd7f378ae819553d37d5f2ee142bd6-0000.au-syd.containers.appdomain.cloud/mq/testing:latest"
   postCommit: {}
