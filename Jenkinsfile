@@ -2,7 +2,9 @@ pipeline {
     agent any
     stages {
         stage('create image') {
-            sh "oc apply -f JMS-bc.yaml"
+            steps {
+                sh 'oc apply -f JMS-bc.yaml'
             }
+        }
     }
 }
