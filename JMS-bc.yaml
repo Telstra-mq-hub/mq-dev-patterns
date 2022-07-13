@@ -1,0 +1,21 @@
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  name: dockerfile-buildconfig
+  namespace: mq
+spec:
+  runPolicy: "Serial" 
+  source: 
+    git:
+      uri: "https://github.com/Telstra-mq-hub/mq-dev-patterns"
+  strategy: 
+    type: Docker
+    dockerStrategy:
+      pullSecret:
+        name: ibm-entitlement-key
+      dockerfilePath: Dockerfile
+  output:
+    to:
+      kind: "ImageStreamTag"
+      name: "default-route-openshift-image-registry.itzroks-663002388p-fxba7u-6ccd7f378ae819553d37d5f2ee142bd6-0000.au-syd.containers.appdomain.cloud/mq/testing:latest"
+  postCommit: {}
