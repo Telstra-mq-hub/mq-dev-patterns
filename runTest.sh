@@ -1,8 +1,8 @@
 #!/bin/bash
 echo "--- Generate job yaml ---"
 
-( echo "cat <<EOF" ; cat ./testing-job.yaml.tmpl; echo EOF ) | \
-sh > ./testing-job.yaml
+( echo "cat <<EOF" ; cat ./env.json.tmpl; echo EOF ) | \
+sh > ./env.json
 
 cat ./testing-job.yaml
 
