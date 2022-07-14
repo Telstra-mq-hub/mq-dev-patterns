@@ -22,6 +22,5 @@ COPY env.json.tmpl ./tmp
 COPY runTest.sh ./tmp
 
 EXPOSE 8080/tcp
-USER 1001
 
 CMD ["sh", "./tmp/runTest.sh"]
