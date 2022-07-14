@@ -2,9 +2,9 @@
 echo "--- Generate job yaml ---"
 
 ( echo "cat <<EOF" ; cat ./env.json.tmpl; echo EOF ) | \
-sh > ./env.json
+sh > env.json
 
-cat ./testing-job.yaml
+cat ./env.json
 
 echo "--- start ---"
 
