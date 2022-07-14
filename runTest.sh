@@ -1,5 +1,8 @@
 #!/bin/bash
 
+( echo "cat <<EOF" ; cat ./env.json.tmpl; echo EOF ) | \
+sh > env.json
+
 echo "--- start ---"
 
 echo "--- put 6 messages ---"
