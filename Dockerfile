@@ -17,10 +17,10 @@ FROM registry.access.redhat.com/ubi8/ubi:8.4
 
 RUN dnf install -y java-11-openjdk.x86_64
 
-COPY --from=builder /workspace/app/target/mq-dev-patterns-0.1.0.jar ./tmp/app.jar
-COPY env.json.tmpl ./tmp
-COPY runTest.sh ./tmp
+COPY --from=builder /workspace/app/target/mq-dev-patterns-0.1.0.jar ./app.jar
+COPY env.json.tmpl .
+COPY runTest.sh .
 
 EXPOSE 8080/tcp
 
-CMD ["sh", "./tmp/runTest.sh"]
+CMD ["sh", "./runTest.sh"]
