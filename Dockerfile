@@ -20,7 +20,7 @@ RUN dnf install -y java-11-openjdk.x86_64
 COPY --from=builder /workspace/app/target/mq-dev-patterns-0.1.0.jar ./app.jar
 COPY env.json.tmpl .
 COPY runTest.sh .
-
+COPY test.json .
 EXPOSE 8080/tcp
 
 CMD ["sh", "./runTest.sh"]
